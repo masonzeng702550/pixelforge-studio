@@ -1,6 +1,8 @@
 <?php
 // Shared bootstrap for PixelForge Studio: session + config helpers + layout.
 
+require_once __DIR__ . '/config.php';
+
 if (!is_dir('/tmp/php_sessions')) { @mkdir('/tmp/php_sessions', 0700, true); }
 ini_set('session.save_path', '/tmp/php_sessions');
 ini_set('session.use_strict_mode', '1');

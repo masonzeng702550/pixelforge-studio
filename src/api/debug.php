@@ -1,7 +1,7 @@
 <?php
 // Internal status endpoint. TODO(ops): gate behind admin before shipping to prod.
-// The runtime data directory (cache, tokens, misc runtime files) is configured
-// via the PIXELFORGE_FLAG_DIR environment variable in the deployment manifest.
+// The runtime data directory (cache, boot tokens, misc scratch files) is configured
+// via the PIXELFORGE_DATA environment variable in the deployment manifest.
 require_once __DIR__ . '/../lib/bootstrap.php';
 header('Content-Type: application/json');
 
