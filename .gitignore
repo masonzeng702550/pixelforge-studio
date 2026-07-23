@@ -1,0 +1,11 @@
+# secrets & local overrides
+.env
+*.local
+
+# render cache contents (keep the dir, drop the artifacts)
+src/storage/cache/*
+!src/storage/cache/.gitkeep
+
+# os cruft
+.DS_Store
+Thumbs.db

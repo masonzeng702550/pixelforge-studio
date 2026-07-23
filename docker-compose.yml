@@ -1,0 +1,30 @@
+services:
+  web:
+    build:
+      context: .
+      args:
+        FLAG: ${FLAG:-THJCC{placeholder_set_FLAG_in_env}}
+    image: pixelforge-studio
+    container_name: pixelforge
+    ports:
+      - "8088:80"
+    environment:
+      CAPTCHA_MODE: ${CAPTCHA_MODE:-arith}
+      CAPTCHA_TTL: ${CAPTCHA_TTL:-90}
+      CAPTCHA_ON_FIRE: ${CAPTCHA_ON_FIRE:-true}
+      INJECTION_LEVEL: ${INJECTION_LEVEL:-2}
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETUID
+      - SETGID
+      - NET_BIND_SERVICE
+      - DAC_OVERRIDE
+    tmpfs:
+      - /tmp/php_sessions:uid=33,gid=33,mode=0700
+    mem_limit: 256m
+    pids_limit: 128
+    restart: unless-stopped

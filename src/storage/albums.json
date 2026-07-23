@@ -1,0 +1,43 @@
+[
+  {
+    "slug": "featured",
+    "title": "Featured Forges",
+    "items": [
+      { "title": "Monday Mood" },
+      { "title": "Cat Loaf Supreme" },
+      { "title": "Deploy on Friday" },
+      { "title": "It Works On My Machine" },
+      { "title": "404 Coffee Not Found" },
+      { "title": "Shipping Vibes" }
+    ]
+  },
+  {
+    "slug": "reactions",
+    "title": "Reaction Pack",
+    "items": [
+      { "title": "Surprised Pikashrug" },
+      { "title": "This Is Fine" },
+      { "title": "Distracted Dev" },
+      { "title": "Facepalm 4K" }
+    ]
+  },
+  {
+    "slug": "wholesome",
+    "title": "Wholesome Corner",
+    "items": [
+      { "title": "Good Doggo" },
+      { "title": "Tiny Succulent" },
+      { "title": "You Got This" }
+    ]
+  },
+  {
+    "slug": "retro",
+    "title": "Retro Pixels",
+    "items": [
+      { "title": "8-bit Sunset" },
+      { "title": "CRT Glow" },
+      { "title": "Arcade Night" },
+      { "title": "Floppy Disk Energy" }
+    ]
+  }
+]
