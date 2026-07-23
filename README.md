@@ -20,7 +20,7 @@ All configuration is environment-driven (see `.env.example`):
 
 | Variable | Default | Purpose |
 |----------|---------|---------|
-| `CAPTCHA_MODE` | `arith` | Human Shield challenge style (`arith` or `text`) |
+| `POW_BITS` | `22` | Human Shield proof-of-work factor (leading zero bits; solve cost ~2^bits) |
 | `CAPTCHA_TTL` | `90` | Seconds a Human Shield token stays valid |
 | `CAPTCHA_ON_FIRE` | `true` | Token is single-use when true |
 | `INJECTION_LEVEL` | `2` | Verbosity of staging banners left in the build |
@@ -29,7 +29,7 @@ All configuration is environment-driven (see `.env.example`):
 ## Stack
 
 - PHP 8.2 + Apache (mod_php)
-- GD for Human Shield image rendering
+- Human Shield proof-of-work (pure PHP `hash()` sha256) — helper solver at `/pow_solve.py`
 - No database — gallery data is served from `storage/albums.json`
 
 ## Layout

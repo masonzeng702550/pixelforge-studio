@@ -1,13 +1,7 @@
 FROM php:8.2-apache
 
-# GD is used to render the Human Shield challenge image.
-RUN apt-get update \
- && apt-get install -y --no-install-recommends libpng-dev \
- && docker-php-ext-install gd \
- && apt-get purge -y --auto-remove \
- && rm -rf /var/lib/apt/lists/*
-
-# Application source served by Apache.
+# Application source served by Apache. The Human Shield proof-of-work uses only
+# PHP's built-in hash() (sha256) - no extra extensions required.
 COPY src/ /var/www/html/
 
 # Writable dirs for the render cache and PHP sessions.
@@ -32,7 +26,7 @@ RUN mkdir -p "$PIXELFORGE_DATA" /var/lib/pixelforge/vault \
  && chmod 0644 "$PIXELFORGE_DATA/THJCC_boot.flag" "/var/lib/pixelforge/vault/vault_${RID}.flag"
 
 # Human Shield + staging-banner defaults (override via compose/env).
-ENV CAPTCHA_MODE=arith \
+ENV POW_BITS=22 \
     CAPTCHA_TTL=90 \
     CAPTCHA_ON_FIRE=true \
     INJECTION_LEVEL=2

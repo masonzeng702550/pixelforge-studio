@@ -43,6 +43,9 @@ h1,h2{letter-spacing:-.01em}
 .card input{background:#0e0f22;border:1px solid var(--line);border-radius:9px;
   padding:10px 12px;color:var(--ink);font-size:15px}
 .verify .cap{display:block;border-radius:10px;border:1px solid var(--line);margin:8px 0}
+.code{background:#0e0f22;border:1px solid var(--line);border-radius:9px;padding:10px 12px;
+  color:var(--accent2);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;
+  overflow-x:auto;white-space:pre}
 .nonce{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:22px;letter-spacing:.06em;
   background:#0e0f22;border:1px dashed var(--accent);border-radius:10px;padding:12px 14px;color:var(--accent2)}
 .ok{margin-top:8px}

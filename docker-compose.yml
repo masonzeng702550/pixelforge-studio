@@ -9,7 +9,7 @@ services:
     ports:
       - "8088:80"
     environment:
-      CAPTCHA_MODE: ${CAPTCHA_MODE:-arith}
+      POW_BITS: ${POW_BITS:-22}
       CAPTCHA_TTL: ${CAPTCHA_TTL:-90}
       CAPTCHA_ON_FIRE: ${CAPTCHA_ON_FIRE:-true}
       INJECTION_LEVEL: ${INJECTION_LEVEL:-2}
